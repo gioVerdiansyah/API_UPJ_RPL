@@ -20,6 +20,7 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('verify.token')->group(function(){
     Route::post('/login', [LoginController::class, 'login']);
     Route::post('/service-printer/katrid', [ServiceController::class, 'katrid']);
+    Route::get('/riwayat-pembelian', [ServiceController::class, 'riwayatPembelian']);
 });
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
