@@ -10,26 +10,25 @@ use Illuminate\Support\Facades\DB;
 
 class ServiceController extends Controller
 {
-    // Service Printer
-    public function katrid(Request $request){
+    public function addHistory(Request $request)
+    {
         try {
             DB::beginTransaction();
 
             $history = new HistoryPembelian;
             $history->user_id = $request->user_id;
-            $history->jenis = 'katrid';
+            $history->jenis = $request->type;
             $history->harga_bahan = $request->harga_bahan;
             $history->harga_jasa = $request->harga_jasa;
             $history->total = intval($request->harga_bahan) + intval($request->harga_jasa);
             $history->save();
 
             DB::commit();
-            return response()->json(['service' => ['success' => true]],201);
+            return response()->json(['service' => ['success' => true]], 201);
         } catch (\Exception $e) {
-            return response()->json(['service' => ['success' => false, 'message' => "Error: $e"]], 500);
+            return response()->json(['service' => ['success' => false, 'message' => "Error: $e"]], 201);
         }
     }
-
     public function riwayatPembelian(Request $request){
         try{
             $user = User::where('id', $request->user_id)->first();

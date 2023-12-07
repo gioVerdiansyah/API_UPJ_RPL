@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('verify.token')->group(function(){
     Route::post('/login', [LoginController::class, 'login']);
-    Route::post('/service-printer/katrid', [ServiceController::class, 'katrid']);
+    Route::post('/payment', [ServiceController::class, 'addHistory']);
     Route::get('/riwayat-pembelian', [ServiceController::class, 'riwayatPembelian']);
 });
 

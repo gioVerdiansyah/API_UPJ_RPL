@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\CetakPembayaranController;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -15,4 +17,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('index');
+
+Route::get('/get-transaction-data', [CetakPembayaranController::class, 'cetak']);

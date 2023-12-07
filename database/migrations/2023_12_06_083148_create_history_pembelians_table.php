@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('history_pembelians', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained()->cascadeOnDelete();
-            $table->enum('jenis', ['katrid', 'tinta', 'roll', 'hardware', 'software', 'desgin', 'cetak', 'kaos']);
+            $table->foreignUuid('user_id')->constrained()->cascadeOnDelete();
+            $table->enum('jenis', ['katrid', 'tinta', 'roll', 'hardware', 'software', 'design', 'cetak', 'kaos']);
             $table->integer('harga_bahan');
             $table->integer('harga_jasa');
             $table->integer('total');
