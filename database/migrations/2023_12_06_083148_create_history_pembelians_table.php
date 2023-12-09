@@ -14,10 +14,14 @@ return new class extends Migration
         Schema::create('history_pembelians', function (Blueprint $table) {
             $table->id();
             $table->foreignUuid('user_id')->constrained()->cascadeOnDelete();
-            $table->enum('jenis', ['katrid', 'tinta', 'roll', 'hardware', 'software', 'design', 'cetak', 'kaos']);
+            $table->string('jenis');
             $table->integer('harga_bahan');
             $table->integer('harga_jasa');
+            $table->integer('jumlah_barang');
+            $table->integer('jumlah_bayar');
+            $table->integer('kembalian');
             $table->integer('total');
+            $table->string('tipe_pembayaran');
             $table->timestamps();
         });
     }

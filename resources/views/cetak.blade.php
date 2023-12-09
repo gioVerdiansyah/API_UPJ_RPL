@@ -25,6 +25,7 @@
                                 <th class="cell100 column2">Harga Bahan</th>
                                 <th class="cell100 column3">Harga Jasa</th>
                                 <th class="cell100 column4">Total</th>
+                                <th class="cell100 column4">Tipe Pembayaran</th>
                             </tr>
                         </thead>
                     </table>
@@ -39,6 +40,7 @@
                                     <td class="cell100 column3 pt-5">{{ $item->harga_bahan }}</td>
                                     <td class="cell100 column4 pt-5">{{ $item->harga_jasa }}</td>
                                     <td class="cell100 column5 pt-5">{{ $item->total }}</td>
+                                    <td class="cell100 column5 pt-5">{{ $item->tipe_pembayaran }}</td>
                                 </tr>
                             @empty
                                 <tr class="row100 body">
