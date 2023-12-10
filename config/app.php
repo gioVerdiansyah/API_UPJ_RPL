@@ -5,7 +5,7 @@ use Illuminate\Support\ServiceProvider;
 
 return [
 
-    'api_key' => env('APP_KEY'),
+    'api_key' => env('API_KEY'),
 
     /*
     |--------------------------------------------------------------------------
@@ -161,6 +161,7 @@ return [
         /*
          * Package Service Providers...
          */
+        Recca0120\Terminal\TerminalServiceProvider::class,
 
         /*
          * Application Service Providers...

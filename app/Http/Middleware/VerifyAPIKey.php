@@ -26,6 +26,8 @@ class VerifyAPIKey {
             return response()->json(['success' => false, 'message' => 'Access denied'], Response::HTTP_FORBIDDEN);
         }
 
-        return $next($request);
+        return $next($request)
+        ->header('Access-Control-Allow-Origin', '*')
+        ->header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
     }
 }
